@@ -8,6 +8,7 @@
   --switchCircleHeight: 2.5rem;
   --switckCircleColor: var(--colorWhite);
   --switchTransition: all 0.4s;
+  --switchText: 16px;
   position: relative;
   display: inline-block;
   width: var(--switchWidth);
@@ -32,6 +33,12 @@
       left: 2px;
       transition: var(--switchTransition);
     }
+  }
+
+  &__text {
+    position: absolute;
+    left: calc(var(--switchWidth) + 8px);
+    font-size: var(--switchText);
   }
 
   &__input {

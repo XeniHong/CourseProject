@@ -1,0 +1,18 @@
+.dropDown {
+  --dropDownBgColor: var(--colorGray);
+  --dropDownBhColorActive: var(--colorPrimary);
+  --dropDownWidth: 34.8rem;
+  --dropDownHeight: 5.5rem;
+  --dropDownBorderRadius: 1rem;
+  --dropDownTransition: all 0.4s;
+  --dropDownText: 14px;
+  position: relative;
+  width: var(--dropDownWidth);
+  height: var(--dropDownHeight);
+  border-radius: var(--dropDownBorderRadius);
+  padding: 1rem;
+
+  &::after {
+    border-radius: var(--dropDownBorderRadius);
+  }
+}

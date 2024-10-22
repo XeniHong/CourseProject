@@ -1,5 +1,13 @@
 import { Button } from "#shared/ui/Button/index";
-import { CinemaIcon } from "#shared/ui/Icons/index";
+import { DropDown } from "#shared/ui/DropDown/index";
+
+import {
+  CinemaIcon,
+  BarIcon,
+  NightClubIcon,
+  RestaurantIcon,
+  TheaterIcon,
+} from "#shared/ui/Icons/index";
 import { Switch } from "#shared/ui/Switch/index";
 
 /**
@@ -21,8 +29,12 @@ const IndexPage = () => `
       <main>
         <p>Hello world! 12</p>
         ${Button({ text: "HI!" })}
-        ${Switch({})}
-        ${CinemaIcon()}
+              <br/>
+        ${Switch({ label: "cinema", name: "cinema" })} 
+        <br/>
+        ${CinemaIcon()}  ${BarIcon()} ${TheaterIcon()} ${NightClubIcon()} ${RestaurantIcon()}
+              <br/>
+        ${DropDown({})} 
       </main>
     </body>
   </html>
