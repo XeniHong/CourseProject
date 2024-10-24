@@ -1,5 +1,16 @@
 export { BarIcon } from "./ui/BarIcon.js";
 export { CinemaIcon } from "./ui/CinemaIcon.js";
+export { DeleteIcon } from "./ui/DeleteIcon.js";
+export { DirectIcon } from "./ui/DirectIcon.js";
+export { EditIcon } from "./ui/EditIcon.js";
+export { LensIcon } from "./ui/LensIcon.js";
+export { LocationIcon } from "./ui/LocationIcon.js";
 export { NightClubIcon } from "./ui/NightClubIcon.js";
+export { NoIcon } from "./ui/NoIcon.js";
 export { RestaurantIcon } from "./ui/RestaurantIcon.js";
+export { RouteIcon } from "./ui/RouteIcon.js";
+export { SaveIcon } from "./ui/SaveIcon.js";
+export { SmallXIcon } from "./ui/SmallXIcon.js";
 export { TheaterIcon } from "./ui/TheaterIcon.js";
+export { XIcon } from "./ui/XIcon.js";
+export { YesIcon } from "./ui/YesIcon.js";

@@ -1,13 +1,6 @@
 import { Button } from "#shared/ui/Button/index";
-import { DropDown } from "#shared/ui/DropDown/index";
-
-import {
-  CinemaIcon,
-  BarIcon,
-  NightClubIcon,
-  RestaurantIcon,
-  TheaterIcon,
-} from "#shared/ui/Icons/index";
+import { CustomSelect } from "#shared/ui/CustomSelect/index";
+import { CinemaIcon } from "#shared/ui/Icons/index";
 import { Switch } from "#shared/ui/Switch/index";
 
 /**
@@ -29,12 +22,53 @@ const IndexPage = () => `
       <main>
         <p>Hello world! 12</p>
         ${Button({ text: "HI!" })}
-              <br/>
-        ${Switch({ label: "cinema", name: "cinema" })} 
-        <br/>
-        ${CinemaIcon()}  ${BarIcon()} ${TheaterIcon()} ${NightClubIcon()} ${RestaurantIcon()}
-              <br/>
-        ${DropDown({})} 
+        ${Switch({
+          label: "Привет мир",
+          extraInputAttrs: [
+            { name: "name", value: "rememberMe" },
+            { name: "form", value: "formAuth" },
+          ],
+        })}
+        
+        ${CinemaIcon()}
+        ${Switch({
+          label: "Привет мир",
+          extraClasses: ["switch--isRightLabel"],
+          extraInputAttrs: [
+            { name: "name", value: "rememberMe" },
+            { name: "form", value: "formAuth" },
+          ],
+        })}
+
+        <div>${CustomSelect({
+          options: [
+            { label: "test", value: "1" },
+            { label: "new_test", value: "2" },
+          ],
+          cfg: {
+            searchEnabled: true,
+          },
+        })}</div>
+
+        <div>${CustomSelect({
+          options: [
+            { label: "test", value: "1" },
+            { label: "new_test", value: "2" },
+          ],
+          cfg: {
+            searchEnabled: true,
+          },
+        })}</div>
+
+        <div>${CustomSelect({
+          options: [
+            { label: "test", value: "1" },
+            { label: "new_test", value: "2" },
+          ],
+          cfg: {
+            searchEnabled: true,
+          },
+        })}</div>
       </main>
     </body>
   </html>
