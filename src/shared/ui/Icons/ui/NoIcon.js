@@ -1,10 +1,10 @@
 /**
  *
  */
-export const NoIcon = () => {
+export const NoIcon = ({ iconColor = "" } = {}) => {
   return `
 
-  <svg width="24" height="26" viewBox="0 0 24 26" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <svg width="24" height="26" viewBox="0 0 24 26"  fill="${iconColor ? iconColor : "currentColor"}" xmlns="http://www.w3.org/2000/svg">
   <g filter="url(#filter0_d_9_147)">
   <circle cx="12" cy="10" r="7" stroke="#DE0000" stroke-width="2"/>
   <path d="M16.8 5.19995L7.20001 14.8" stroke="#DE0000" stroke-width="2"/>

@@ -1,6 +1,14 @@
 import { Button } from "#shared/ui/Button/index";
 import { CustomSelect } from "#shared/ui/CustomSelect/index";
-import { CinemaIcon } from "#shared/ui/Icons/index";
+import {
+  CheckIcon,
+  CancelIcon,
+  BarIcon,
+  CinemaIcon,
+  RestaurantIcon,
+  MusicIcon,
+  TheaterIcon,
+} from "#shared/ui/Icons/index";
 import { Switch } from "#shared/ui/Switch/index";
 
 /**
@@ -21,54 +29,133 @@ const IndexPage = () => `
       </header>
       <main>
         <p>Hello world! 12</p>
-        ${Button({ text: "HI!" })}
-        ${Switch({
-          label: "Привет мир",
-          extraInputAttrs: [
-            { name: "name", value: "rememberMe" },
-            { name: "form", value: "formAuth" },
-          ],
-        })}
-        
-        ${CinemaIcon()}
-        ${Switch({
-          label: "Привет мир",
-          extraClasses: ["switch--isRightLabel"],
-          extraInputAttrs: [
-            { name: "name", value: "rememberMe" },
-            { name: "form", value: "formAuth" },
-          ],
-        })}
+        <div class="isFlex mb16 gap8">
+          ${Button({ text: "Да", iconSlot: CheckIcon(), extraClasses: ["btn--isGreenLightIcon"] })}
+          ${Button({ text: "Нет", iconSlot: CancelIcon(), extraClasses: ["btn--isRedIcon"] })}
+        </div>
 
-        <div>${CustomSelect({
-          options: [
-            { label: "test", value: "1" },
-            { label: "new_test", value: "2" },
-          ],
-          cfg: {
-            searchEnabled: true,
-          },
-        })}</div>
+        <div class="isFlex mb16 gap8">
+          ${Switch({
+            label: "Привет мир",
+            extraInputAttrs: [
+              { name: "name", value: "rememberMe" },
+              { name: "form", value: "formAuth" },
+            ],
+          })}
+          
+          ${Switch({
+            label: "Привет мир",
+            extraClasses: ["switch--isRightLabel"],
+            extraInputAttrs: [
+              { name: "name", value: "rememberMe" },
+              { name: "form", value: "formAuth" },
+            ],
+          })}
+        </div>
 
-        <div>${CustomSelect({
-          options: [
-            { label: "test", value: "1" },
-            { label: "new_test", value: "2" },
-          ],
-          cfg: {
-            searchEnabled: true,
-          },
-        })}</div>
+        <div style="max-width: 279px">
+          ${CustomSelect({
+            extraAttrs: [{ name: "id", value: "select-type-mark" }],
+            cfg: {
+              preset: "default",
+              itemSelectText: "",
+              searchEnabled: false,
+              choices: [
+                {
+                  value: "Ресторан",
+                  label: "Ресторан",
+                  selected: true,
+                  customProperties: {
+                    icon: RestaurantIcon({ iconColor: "var(--colorOrange)" }),
+                  },
+                },
+                {
+                  value: "Ночной клуб",
+                  label: "Ночной клуб",
+                  selected: false,
+                  customProperties: {
+                    icon: MusicIcon({ iconColor: "var(--colorBlue)" }),
+                  },
+                },
+                {
+                  value: "Театр",
+                  label: "Театр",
+                  selected: false,
+                  customProperties: {
+                    icon: TheaterIcon({ iconColor: "var(--colorPurple)" }),
+                  },
+                },
+                {
+                  value: "Кино",
+                  label: "Кино",
+                  selected: false,
+                  customProperties: {
+                    icon: CinemaIcon({ iconColor: "var(--colorGreen)" }),
+                  },
+                },
+                {
+                  value: "Бар",
+                  label: "Бар",
+                  selected: false,
+                  customProperties: {
+                    icon: BarIcon({ iconColor: "var(--colorRed)" }),
+                  },
+                },
+              ],
+            },
+          })}
 
-        <div>${CustomSelect({
-          options: [
-            { label: "test", value: "1" },
-            { label: "new_test", value: "2" },
-          ],
-          cfg: {
-            searchEnabled: true,
-          },
-        })}</div>
+          ${CustomSelect({
+            extraAttrs: [{ name: "id", value: "select-type-mark" }],
+            cfg: {
+              preset: "fancy",
+              itemSelectText: "",
+              searchEnabled: false,
+              choices: [
+                {
+                  value: "Ресторан",
+                  label: "Ресторан",
+                  selected: true,
+                  customProperties: {
+                    icon: RestaurantIcon({ iconColor: "var(--colorRed)" }),
+                  },
+                },
+                {
+                  value: "Ночной клуб",
+                  label: "Ночной клуб",
+                  selected: false,
+                  customProperties: {
+                    icon: MusicIcon({ iconColor: "var(--colorRed)" }),
+                  },
+                },
+                {
+                  value: "Театр",
+                  label: "Театр",
+                  selected: false,
+                  customProperties: {
+                    icon: TheaterIcon({ iconColor: "var(--colorRed)" }),
+                  },
+                },
+                {
+                  value: "Кино",
+                  label: "Кино",
+                  selected: false,
+                  customProperties: {
+                    icon: CinemaIcon({ iconColor: "var(--colorPrimary)" }),
+                  },
+                },
+                {
+                  value: "Бар",
+                  label: "Бар",
+                  selected: false,
+                  customProperties: {
+                    icon: BarIcon({ iconColor: "var(--colorRed)" }),
+                  },
+                },
+              ],
+            },
+          })}
+        </div>
       </main>
     </body>
   </html>
