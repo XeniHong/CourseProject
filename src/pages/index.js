@@ -33,7 +33,6 @@ const IndexPage = () => `
           ${Button({ text: "Да", iconSlot: CheckIcon(), extraClasses: ["btn--isGreenLightIcon"] })}
           ${Button({ text: "Нет", iconSlot: CancelIcon(), extraClasses: ["btn--isRedIcon"] })}
         </div>
-
         <div class="isFlex mb16 gap8">
           ${Switch({
             label: "Привет мир",
@@ -53,7 +52,9 @@ const IndexPage = () => `
           })}
         </div>
 
-        <div style="max-width: 279px">
+      
+
+<div style="max-width: 279px">
           ${CustomSelect({
             extraAttrs: [{ name: "id", value: "select-type-mark" }],
             cfg: {
@@ -105,57 +106,9 @@ const IndexPage = () => `
             },
           })}
 
-          ${CustomSelect({
-            extraAttrs: [{ name: "id", value: "select-type-mark" }],
-            cfg: {
-              preset: "fancy",
-              itemSelectText: "",
-              searchEnabled: false,
-              choices: [
-                {
-                  value: "Ресторан",
-                  label: "Ресторан",
-                  selected: true,
-                  customProperties: {
-                    icon: RestaurantIcon({ iconColor: "var(--colorRed)" }),
-                  },
-                },
-                {
-                  value: "Ночной клуб",
-                  label: "Ночной клуб",
-                  selected: false,
-                  customProperties: {
-                    icon: MusicIcon({ iconColor: "var(--colorRed)" }),
-                  },
-                },
-                {
-                  value: "Театр",
-                  label: "Театр",
-                  selected: false,
-                  customProperties: {
-                    icon: TheaterIcon({ iconColor: "var(--colorRed)" }),
-                  },
-                },
-                {
-                  value: "Кино",
-                  label: "Кино",
-                  selected: false,
-                  customProperties: {
-                    icon: CinemaIcon({ iconColor: "var(--colorPrimary)" }),
-                  },
-                },
-                {
-                  value: "Бар",
-                  label: "Бар",
-                  selected: false,
-                  customProperties: {
-                    icon: BarIcon({ iconColor: "var(--colorRed)" }),
-                  },
-                },
-              ],
-            },
-          })}
+        
         </div>
+        <div id="map1" style="width: 800px; aspect-ratio: 1 / 1"></div>
       </main>
     </body>
   </html>

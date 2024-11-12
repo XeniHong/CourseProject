@@ -8,7 +8,6 @@ export { EditIcon } from "./ui/EditIcon.js";
 export { LensIcon } from "./ui/LensIcon.js";
 export { LocationIcon } from "./ui/LocationIcon.js";
 export { MusicIcon } from "./ui/MusicIcon.js";
-export { NoIcon } from "./ui/NoIcon.js";
 export { RestaurantIcon } from "./ui/RestaurantIcon.js";
 export { RouteIcon } from "./ui/RouteIcon.js";
 export { SaveIcon } from "./ui/SaveIcon.js";
