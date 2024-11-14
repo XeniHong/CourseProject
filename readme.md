@@ -13,6 +13,7 @@
 
    ```bash
    npm install
+   npm install react
    ```
 
 ## Запуск
