@@ -9,7 +9,7 @@ export class MapApp {
     this.yandexMap = new YandexMap({
       containerSelector: "#map1",
       apiUrl: "https://api-maps.yandex.ru/2.1/?apikey",
-      apiKey: "b4a559eb-311c-4123-8025-480ecdc62549",
+      apiKey: "e9fa3cf7-bc7b-4116-8c7b-d6d64f9750a2",
       lang: "ru_RU",
       center: [53.5, 53.9],
       zoom: 10,
@@ -30,7 +30,7 @@ export class MapApp {
   async getMarks() {
     return this.apiClient
       .get(API_ENDPOINTS.marks.list)
-      .then((res) => res?.data?.marks);
+      .then((res) => res.data.marks);
   }
 
   handleMarkersChanged() {
@@ -52,7 +52,7 @@ export class MapApp {
   }
 
   unsubscribeFromStoreService() {
-    this.markerSubscription?.();
-    this.subscribeOnStoreChange?.();
+    this.markerSubscription();
+    this.subscribeOnStoreChange();
   }
 }
