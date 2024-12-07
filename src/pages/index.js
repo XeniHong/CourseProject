@@ -1,3 +1,4 @@
+import { PlaceSwitchGroup } from "#features/PlaceSwitchGroup";
 import { Button } from "#shared/ui/Button/index";
 import { CustomSelect } from "#shared/ui/CustomSelect/index";
 import {
@@ -25,9 +26,14 @@ const IndexPage = () => `
     </head>
     <body>
       <header>
-        <h1>Welcome to the Home Page</h1>
+        <h1>Yandex map</h1>
       </header>
       <main>
+
+        ${PlaceSwitchGroup()}
+        <div id="map1" class="yandexMap" style="width: 1200px; height: 658px"></div>
+      </main>
+
         <p>Hello world! 12</p>
         <div class="isFlex mb16 gap8">
           ${Button({ text: "Да", iconSlot: CheckIcon(), extraClasses: ["btn--isGreenLightIcon"] })}
@@ -41,7 +47,7 @@ const IndexPage = () => `
               { name: "form", value: "formAuth" },
             ],
           })}
-          
+
           ${Switch({
             label: "Привет мир",
             extraClasses: ["switch--isRightLabel"],
@@ -52,7 +58,7 @@ const IndexPage = () => `
           })}
         </div>
 
-      
+
 
 <div style="max-width: 279px">
           ${CustomSelect({
@@ -105,10 +111,16 @@ const IndexPage = () => `
               ],
             },
           })}
+        </div>
 
-         </div>
-        <div id="map1" class="yandexMap" style="width: 800px; aspect-ratio: 1 / 1"></div>
-      </main>
+      <div style="display: none">
+        <div id="modalSuccess">
+            <p>Успешно!</p>
+        </div>
+        <div id="modalError">
+          <p>Не успешно!</p>
+        </div>
+      </div>
     </body>
   </html>
 `;

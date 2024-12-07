@@ -7,6 +7,8 @@ export class StoreService {
       addMarker: (payload) => this.store.getState().addMarker(payload),
       removeMarker: (payload) => this.store.getState().removeMarker(payload),
       addMarkers: (payload) => this.store.getState().addMarkers(payload),
+      setFilters: (payload) => this.store.getState().setFilters(payload),
+      setMarkers: (payload) => this.store.getState().setMarkers(payload),
     };
   }
 

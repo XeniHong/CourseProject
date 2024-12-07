@@ -1,7 +1,15 @@
 .yandexMap {
   --yandexMapWidthPlacemark: 4.625rem;
+  --yandexMapBallonLayoutWidth: 37.5rem;
+  --yandexMapBallonLayoutMinHeight: 10rem;
+  --yandexMapBallonContentBgColor: var(--colorWhite);
+  --yandexMapBallonLayoutPd: 2px;
+  --yandexMapBallonSwiperHeight: 9.5rem;
+  --yandexMapBallonTextWeight: 700;
+  --yandexMapBallonTexSize: 20;
+  position: relative;
 
-  &__customPlacemark {
+  &__mark {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,5 +19,67 @@
     aspect-ratio: 1 / 1;
     transition: all 0.3s;
     box-shadow: var(--boxShadowDefault);
+  }
+
+  &__ballonLayout {
+    position: relative;
+    width: var(--yandexMapBallonLayoutWidth);
+    min-height: var(--yandexMapBallonLayoutMinHeight);
+    background-color: var(--colorWhite);
+    translate: calc(-50% + var(--yandexMapWidthPlacemark) / 2)
+      calc(-100% - 2rem);
+    padding: var(--yandexMapBallonLayoutPd);
+    border-radius: 2rem;
+    box-shadow: var(--boxShadowDefault);
+  }
+
+  &__ballonContent {
+    max-width: 37.5rem;
+
+    .swiper {
+      height: var(--yandexMapBallonSwiperHeight);
+      width: auto;
+    }
+
+    /* stylelint-disable-next-line selector-class-pattern */
+    .ballon__content {
+      padding: 1rem 1.25rem;
+      /* stylelint-disable-next-line rule-empty-line-before */
+      &--text {
+        font-weight: var(--yandexMapBallonTextWeight);
+        font-size: var(--yandexMapBallonTexSize);
+      }
+    }
+    /* stylelint-disable-next-line rule-empty-line-before */
+    /* stylelint-disable-next-line selector-class-pattern */
+    .ballon__button {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+  }
+
+  &__centerMarker {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4rem;
+    height: 4rem;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  &__tooltip {
+    display: none;
+    position: absolute;
+    content: "Подсказка";
+    top: 50%;
+    left: 50%;
+    width: 10rem;
+    height: 10rem;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: var(--colorGrey);
+    border-radius: 5px;
   }
 }

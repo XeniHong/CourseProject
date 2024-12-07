@@ -59,8 +59,10 @@
     ]
   },
   "dependencies": {
+    "@fancyapps/ui": "^5.0.36",
     "choices.js": "^11.0.2",
     "react": "^18.3.1",
+    "swiper": "^11.1.15",
     "zustand": "^5.0.1"
   }
 }
