@@ -35,7 +35,7 @@ const IndexPage = () => `
 
 
 
-        <p>Hello world! 12</p>
+        <p>проверка компонетов</p>
         <div class="isFlex mb16 gap8">
           ${Button({ text: "Да", iconSlot: CheckIcon(), extraClasses: ["btn--isGreenLightIcon"] })}
           ${Button({ text: "Нет", iconSlot: CancelIcon(), extraClasses: ["btn--isRedIcon"] })}

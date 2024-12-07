@@ -1,5 +1,5 @@
 /**
- * Компонент кнопки
+ * Компонент загрузки
  * @return {String}
  */
 export const Spinner = () =>

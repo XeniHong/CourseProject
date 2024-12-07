@@ -19,71 +19,90 @@ export const getUpdateMarkModalContent = ({
 }) => {
   return `<div class="updateModalContent" >
   <form data-js-form=${JSON.stringify({ url, method, showModalAfterSuccess: "#modalSuccess", redirectUrlAfterSuccess: "/test.html", delayBeforeRedirect: 3000 })}>
-    <h3>Редактировать метку</h3>
-    <p>${markInfo.title}</p>
-    <div>
-      <label>Комментарий пользователя
-        <input type="comment" value="${markInfo.comment}" name="comment" />
-      </label>
-      ${CustomSelect({
-        extraAttrs: [
-          {
-            name: "data-js-update-mark-info-select-type",
-            value: markInfo.id,
-          },
-          {
-            name: "name",
-            value: "typeMark",
-          },
-        ],
-        cfg: {
-          preset: "default",
-          itemSelectText: "",
-          searchEnabled: false,
-          choices: [
-            {
-              value: "Бar",
-              label: "Бар",
-              selected: markInfo.type === "bars",
-              customProperties: {
-                icon: BarIcon({ iconColor: "var(--colorRed)" }),
+    <h2>Редактировать метку</h2>
+    <h3>${markInfo.title}</h3>
+    <p>${markInfo.address}</p>
+    <div class="updateModalContent__elements">
+      <div class="updateModalContent__comment">
+        <label>Комментарий пользователя
+          <input type="comment" value="${markInfo.comment}" name="comment"/>
+        </label>
+      </div>
+
+      <div class="updateModalContent__mark">
+        <label>Тип метки</label>
+          <div class="updateModalContent__mark--select">
+          ${CustomSelect({
+            extraAttrs: [
+              {
+                name: "data-js-update-mark-info-select-type",
+                value: markInfo.id,
               },
-            },
-            {
-              value: "Ресторан",
-              label: "Ресторан",
-              selected: markInfo.type === "restaurant",
-              customProperties: {
-                icon: RestaurantIcon({ iconColor: "var(--colorRed)" }),
+              {
+                name: "name",
+                value: "typeMark",
               },
+            ],
+            cfg: {
+              preset: "default",
+              itemSelectText: "",
+              searchEnabled: false,
+              choices: [
+                {
+                  value: "Бar",
+                  label: "Бар",
+                  selected: markInfo.type === "bar",
+                  customProperties: {
+                    icon: BarIcon({ iconColor: "var(--colorRed)" }),
+                  },
+                },
+                {
+                  value: "Ресторан",
+                  label: "Ресторан",
+                  selected: markInfo.type === "restaurant",
+                  customProperties: {
+                    icon: RestaurantIcon({ iconColor: "var(--colorOrange)" }),
+                  },
+                },
+                {
+                  value: "Ночной клуб",
+                  label: "Ночной клуб",
+                  selected: markInfo.type === "club",
+                  customProperties: {
+                    icon: MusicIcon({ iconColor: "var(--colorBlue)" }),
+                  },
+                },
+                {
+                  value: "Театр",
+                  label: "Театр",
+                  selected: markInfo.type === "theater",
+                  customProperties: {
+                    icon: TheaterIcon({ iconColor: "var(--colorPurple)" }),
+                  },
+                },
+                {
+                  value: "Кино",
+                  label: "Кино",
+                  selected: markInfo.type === "cinema",
+                  customProperties: {
+                    icon: CinemaIcon({ iconColor: "var(--colorGreen)" }),
+                  },
+                },
+              ],
             },
-            {
-              value: "Ночной клуб",
-              label: "Ночной клуб",
-              selected: markInfo.type === "trk",
-              customProperties: {
-                icon: MusicIcon({ iconColor: "var(--colorRed)" }),
-              },
-            },
-            {
-              value: "Театр",
-              label: "Театр",
-              selected: markInfo.type === "theatre",
-              customProperties: {
-                icon: TheaterIcon({ iconColor: "var(--colorRed)" }),
-              },
-            },
-            {
-              value: "Кино",
-              label: "Кино",
-              selected: markInfo.type === "cinema",
-              customProperties: {
-                icon: CinemaIcon({ iconColor: "var(--colorPrimary)" }),
-              },
-            },
-          ],
-        },
-      })}
+          })}
+          </div>
+      </div>
+      <div class="updateModalContent__photo">
+        <label>Фотографии</label>
+        <div>
+        </div>
+      </div>
+      <div class="updateModalContent__AddPhoto">
+        <label>Добавить фотографии</label>
+        <div>
+        </div>
+      </div>
       ${Button({
         text: "Сохранить",
         extraAttrs: [

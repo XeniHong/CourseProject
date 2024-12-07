@@ -58,8 +58,8 @@ export const marksDetailMockResponse = [
     images: [
       "assets/marksDetail/bar.png",
       "assets/marksDetail/bar1.png",
-      "assets/marksDetail/bar.png",
-      "assets/marksDetail/bar.png",
+      "assets/marksDetail/bar2.png",
+      "assets/marksDetail/bar3.png",
     ],
   },
   {

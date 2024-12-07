@@ -1,4 +1,39 @@
 .updateModalContent {
   --updateModalContentMinWidth: 100rem;
+  --updateModalContentLabelWidth: 7rem;
+  --updateModalContentCommentWidth: 17.5rem;
+  --updateModalContentCommentHeight: 7.25rem;
   min-width: var(--updateModalContentMinWidth);
+  max-width: auto;
+
+  label {
+    font-size: 14px;
+    width: var(--updateModalContentLabelWidth);
+  }
+
+  &__elements {
+    display: flex;
+    flex-direction: column;
+
+    input {
+      width: var(--updateModalContentCommentWidth);
+      height: var(--updateModalContentCommentHeight);
+      line-height: normal;
+      word-wrap: break-word;
+    }
+  }
+
+  &__comment {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__mark {
+    display: flex;
+    flex-direction: row;
+
+    &--select {
+      width: 17rem;
+    }
+  }
 }
