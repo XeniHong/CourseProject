@@ -1,3 +1,21 @@
 .confirmModal {
+  --confirmModalWidht: 80rem;
+  --confirmModalHeight: 20rem;
+  --confirmModalTitleWeight: bold;
+  --confirmModalTitleSize: 20px;
   color: var(--colorBlack);
+  width: var(--confirmModalWidht);
+  height: var(--confirmModalHeight);
+  display: flex;
+  text-align: center;
+  border-radius: 10px;
+
+  &__title {
+    font-weight: var(--confirmModalTitleWeight);
+    font-size: var(--confirmModalTitleSize);
+  }
+
+  &__buttons {
+    gap: 10px;
+  }
 }

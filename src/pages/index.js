@@ -32,7 +32,8 @@ const IndexPage = () => `
 
         ${PlaceSwitchGroup()}
         <div id="map1" class="yandexMap" style="width: 1200px; height: 658px"></div>
-      </main>
+
+
 
         <p>Hello world! 12</p>
         <div class="isFlex mb16 gap8">
@@ -112,6 +113,7 @@ const IndexPage = () => `
             },
           })}
         </div>
+        </main>
 
       <div style="display: none">
         <div id="modalSuccess">

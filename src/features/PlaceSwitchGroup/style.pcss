@@ -1,16 +1,62 @@
 .placeSwitchGroup {
-  --placeSwitchSearchWidht: 25rem;
+  --placeSwitchSearchWidht: 25.5rem;
   --placeSwitchSearchHeight: 3rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  vertical-align: middle;
-  margin-bottom: 2rem;
+  --placeSwitchSearchTextSize: 16px;
+  --placeSwitchSearchBorderRadius: 3rem;
+  --placeSwitchSearchBorderColor: var(--colorPrimary);
+  --placeSwitchSearchPlaceholder: var(--colorLightGray);
+  --placeSwitchSearchIcon: var(--colorBlack);
+  --placeSwitchGap: 1.875rem;
+
+  &--elemts {
+    display: flex;
+    gap: var(--placeSwitchGap);
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 2rem;
+    font-size: var(--placeSwitchSearchTextSize);
+  }
 
   /* stylelint-disable-next-line selector-class-pattern */
-  .place__search {
+  .input__field {
+    position: relative;
+  }
+
+  /* stylelint-disable-next-line selector-class-pattern */
+  .input__search {
+    display: block;
+    line-height: 1.5;
     width: var(--placeSwitchSearchWidht);
     height: var(--placeSwitchSearchHeight);
-    
+    border: solid 1px var(--colorLightGray);
+    border-radius: 5px;
+    padding: 12px 16px;
+    background-color: var(--colorLightGray);
+
+    &:focus {
+      background-color: var(--colorWhite);
+      border: solid 1px var(--colorPrimary);
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
+    }
+  }
+
+  /* stylelint-disable-next-line rule-empty-line-before */
+  /* stylelint-disable-next-line selector-class-pattern */
+  .input__icon {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    left: calc(var(--placeSwitchSearchWidht) - 0.2rem);
+    width: 2rem;
+    cursor: pointer;
+    color: var(--placeSwitchSearchIcon);
+    transition: color 0.15s ease-in-out;
+
+    &:hover {
+      opacity: 0.4;
+    }
   }
 }
