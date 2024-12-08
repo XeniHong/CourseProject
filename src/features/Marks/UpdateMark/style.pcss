@@ -1,8 +1,12 @@
 .updateModalContent {
   --updateModalContentMinWidth: 100rem;
-  --updateModalContentLabelWidth: 7rem;
-  --updateModalContentCommentWidth: 17.5rem;
-  --updateModalContentCommentHeight: 7.25rem;
+  --updateModalContentLabelWidth: 30rem;
+  --updateModalContentSecondBlocktWidth: 60rem;
+  --updateModalContentCommentHeight: 10rem;
+  --updateModalContentGap: 5rem;
+  --updateModalContentBorderRadius: 10px;
+  --updateModalContentGapElements: 2rem;
+  --updateModalContentBgColor: var(--colorLightGray);
   min-width: var(--updateModalContentMinWidth);
   max-width: auto;
 
@@ -20,26 +24,40 @@
   &__elements {
     display: flex;
     flex-direction: column;
+    gap: var(--updateModalContentGapElements);
+  }
+
+  &__element {
+    display: flex;
+    flex-direction: row;
+    gap: var(--updateModalContentGap);
 
     input {
-      width: var(--updateModalContentCommentWidth);
+      width: var(--updateModalContentSecondBlocktWidth);
       height: var(--updateModalContentCommentHeight);
       line-height: normal;
       word-wrap: break-word;
+      background-color: var(--updateModalContentBgColor);
+      border: 1px solid var(--colorLightGray);
+      border-radius: var(--updateModalContentBorderRadius);
     }
-  }
-
-  &__comment {
-    display: flex;
-    flex-direction: row;
-  }
-
-  &__mark {
-    display: flex;
-    flex-direction: row;
 
     &--select {
-      width: 17rem;
+      width: var(--updateModalContentSecondBlocktWidth);
     }
+
+    &--image {
+      width: var(--updateModalContentSecondBlocktWidth);
+      height: var(--updateModalContentCommentHeight);
+      background-color: var(--colorLightGray);
+      border: 1px solid var(--colorLightGray);
+      border-radius: var;
+    }
+  }
+
+  &__button {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
   }
 }

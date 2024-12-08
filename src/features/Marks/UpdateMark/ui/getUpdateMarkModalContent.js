@@ -1,37 +1,38 @@
 import { Button } from "#shared/ui/Button";
 import { CustomSelect } from "#shared/ui/CustomSelect/index";
 import {
-    CinemaIcon,
-    RestaurantIcon,
-    MusicIcon,
-    TheaterIcon,
-    BarIcon,
-    XIcon,
+  CinemaIcon,
+  RestaurantIcon,
+  MusicIcon,
+  TheaterIcon,
+  BarIcon,
+  XIcon,
+  SaveIcon,
 } from "#shared/ui/Icons/index";
 
 /**
  * Контент модалки обновления метки
  */
 export const getUpdateMarkModalContent = ({
-    markInfo,
-    url,
-    method = "post",
-    iconColor = "var(--colorBlack)",
+  markInfo,
+  url,
+  method = "post",
+  iconColor = "var(--colorBlack)",
 }) => {
-    return `<div class="updateModalContent" >
+  return `<div class="updateModalContent" >
   <form data-js-form=${JSON.stringify({ url, method, showModalAfterSuccess: "#modalSuccess", redirectUrlAfterSuccess: "/test.html", delayBeforeRedirect: 3000 })}>
   <div class="updateModalContent__header">
     <h2>Редактировать метку</h2>
     ${Button({
-    iconSlot: XIcon(),
-    extraClasses: ["btn--isSmall"],
-    text: "",
-    extraAttrs: [
-      {
-        name: "type",
-        value: "submit",
-      },
-    ],
+      iconSlot: XIcon(),
+      extraClasses: ["btn--isSmall"],
+      text: "",
+      extraAttrs: [
+        {
+          name: "type",
+          value: "submit",
+        },
+      ],
     })}
   </div>
 
@@ -39,15 +40,14 @@ export const getUpdateMarkModalContent = ({
     <h3>${markInfo.title}</h3>
     <p>${markInfo.address}</p>
     <div class="updateModalContent__elements">
-      <div class="updateModalContent__comment">
-        <label>Комментарий пользователя
-          <input type="comment" value="${markInfo.comment}" name="comment"/>
-        </label>
+      <div class="updateModalContent__element">
+        <label>Комментарий пользователя</label>
+        <input type="comment" value="${markInfo.comment}" name="comment"/>
       </div>
 
-      <div class="updateModalContent__mark">
+      <div class="updateModalContent__element">
         <label>Тип метки</label>
-          <div class="updateModalContent__mark--select">
+          <div class="updateModalContent__element--select">
           ${CustomSelect({
             extraAttrs: [
               {
@@ -110,19 +110,21 @@ export const getUpdateMarkModalContent = ({
           </div>
       </div>
 
-      <div class="updateModalContent__photo">
+      <div class="updateModalContent__element">
         <label>Фотографии</label>
-        <div>
+        <div class="updateModalContent__element--image">
         </div>
       </div>
-      
-      <div class="updateModalContent__AddPhoto">
+
+      <div class="updateModalContent__element">
         <label>Добавить фотографии</label>
-        <div>
+        <div class="updateModalContent__element--add">
         </div>
       </div>
+      <div class="updateModalContent__button">
       ${Button({
         text: "Сохранить",
+        iconSlot: [SaveIcon()],
         extraAttrs: [
           {
             name: "type",
@@ -130,6 +132,11 @@ export const getUpdateMarkModalContent = ({
           },
         ],
       })}
+        ${Button({
+          text: "Отмена",
+          extraClasses: ["btn--textIsRed"],
+        })}
+      </div>
     </div>
   </form>
   </div>`;

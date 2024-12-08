@@ -31,7 +31,14 @@ const IndexPage = () => `
       <main>
 
         ${PlaceSwitchGroup()}
-        <div id="map1" class="yandexMap" style="width: 1200px; height: 658px"></div>
+        <div class="Map">
+          <div id="map1" class="yandexMap" style="width: 1200px; height: 658px">
+
+          </div>
+          <div class="Map__Side">
+
+          </div>
+        </div>
 
 
 
