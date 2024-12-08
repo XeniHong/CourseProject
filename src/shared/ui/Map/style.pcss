@@ -7,7 +7,9 @@
   --yandexMapBallonSwiperHeight: 9.5rem;
   --yandexMapBallonTextWeight: 700;
   --yandexMapBallonTexSize: 20px;
+  --yandexMapBorderRadius: 5rem;
   position: relative;
+  border-radius: var(--yandexMapBorderRadius);
 
   &__mark {
     display: flex;
@@ -81,5 +83,18 @@
     background-color: rgba(0, 0, 0, 0.8);
     color: var(--colorGrey);
     border-radius: 5px;
+  }
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+.Map {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+
+  &__Side {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 }
