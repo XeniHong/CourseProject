@@ -1,25 +1,41 @@
 import { Button } from "#shared/ui/Button";
 import { CustomSelect } from "#shared/ui/CustomSelect/index";
 import {
-  CinemaIcon,
-  RestaurantIcon,
-  MusicIcon,
-  TheaterIcon,
-  BarIcon,
+    CinemaIcon,
+    RestaurantIcon,
+    MusicIcon,
+    TheaterIcon,
+    BarIcon,
+    XIcon,
 } from "#shared/ui/Icons/index";
 
 /**
  * Контент модалки обновления метки
  */
 export const getUpdateMarkModalContent = ({
-  markInfo,
-  url,
-  method = "post",
-  iconColor = "var(--colorBlack)",
+    markInfo,
+    url,
+    method = "post",
+    iconColor = "var(--colorBlack)",
 }) => {
-  return `<div class="updateModalContent" >
+    return `<div class="updateModalContent" >
   <form data-js-form=${JSON.stringify({ url, method, showModalAfterSuccess: "#modalSuccess", redirectUrlAfterSuccess: "/test.html", delayBeforeRedirect: 3000 })}>
+  <div class="updateModalContent__header">
     <h2>Редактировать метку</h2>
+    ${Button({
+    iconSlot: XIcon(),
+    extraClasses: ["btn--isSmall"],
+    text: "",
+    extraAttrs: [
+      {
+        name: "type",
+        value: "submit",
+      },
+    ],
+    })}
+  </div>
+
+
     <h3>${markInfo.title}</h3>
     <p>${markInfo.address}</p>
     <div class="updateModalContent__elements">
@@ -93,11 +109,13 @@ export const getUpdateMarkModalContent = ({
           })}
           </div>
       </div>
+
       <div class="updateModalContent__photo">
         <label>Фотографии</label>
         <div>
         </div>
       </div>
+      
       <div class="updateModalContent__AddPhoto">
         <label>Добавить фотографии</label>
         <div>

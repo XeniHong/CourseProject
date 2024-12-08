@@ -14,3 +14,4 @@ export { RouteIcon } from "./ui/RouteIcon.js";
 export { SaveIcon } from "./ui/SaveIcon.js";
 export { SmallXIcon } from "./ui/SmallXIcon.js";
 export { TheaterIcon } from "./ui/TheaterIcon.js";
+export { XIcon } from "./ui/XIcon.js";
